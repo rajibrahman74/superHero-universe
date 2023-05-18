@@ -9,7 +9,7 @@ const Header = () => {
             <h1>
               Explore the World of{" "}
               <span className="whitespace-nowrap text-warning">
-                Superpowers !
+                Superheros !
               </span>
             </h1>
           </div>
