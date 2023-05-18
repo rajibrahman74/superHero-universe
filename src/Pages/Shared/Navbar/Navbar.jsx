@@ -1,6 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProviders";
+import { useContext } from "react";
+import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 
 const Navbar = () => {
+  // const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        // toast.success("User logout successfully");
+      })
+      .catch((error) => {
+        console.error(error.message);
+        // toast.error(error.message);
+      });
+  };
+
   return (
     <header className="bg-[#eeeff1] sticky top-0 z-10">
       <nav className="navbar max-w-7xl mx-auto flex justify-between items-center px-4 py-5">
@@ -95,9 +113,8 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
-        <div>
-          <div className="hidden lg:flex ms-auto me-5">
-            <ul className="flex items-center gap-8 px-1">
+          <div className="hidden lg:flex me-auto">
+            <ul className="flex items-center gap-6 px-1">
               <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
@@ -148,14 +165,28 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+        <div>
           <div className="flex items-center justify-center">
-            <img
-              // title={user.displayName}
-              className="w-12 h-12 rounded-full"
-              // src={user.photoURL}
-              src="https://media.licdn.com/dms/image/D5603AQEY32qG8cq1RA/profile-displayphoto-shrink_200_200/0/1671728550172?e=1689811200&v=beta&t=uht7relojC9feSngy1fNK7gZ29nIOnkwx9YvRvVfrL4"
-              alt=""
-            />
+            {/* conditional rendaring */}
+            {user ? (
+              <div className="flex items-center justify-center gap-6">
+                <img
+                  title={user.displayName}
+                  className="w-12 h-12 rounded-full"
+                  src={user.photoURL}
+                  alt=""
+                />
+                <button
+                  onClick={handleLogOut}
+                  className="btn border-0 text-white bg-warning px-4 py-2 font-bold rounded-md flex items-center gap-1"
+                >
+                  <ArrowLeftOnRectangleIcon className="h-5 w-5" />
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </nav>
