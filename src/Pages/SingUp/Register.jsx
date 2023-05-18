@@ -1,6 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { AuthContext } from "../../providers/AuthProviders";
+import { updateProfile } from "firebase/auth";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 // import {
 //   GoogleAuthProvider,
 //   getAuth,
@@ -11,52 +13,78 @@ import { Link } from "react-router-dom";
 // const auth = getAuth(app);
 // const googleProvider = new GoogleAuthProvider();
 
-const SignUp = () => {
-  //   const { createUser } = useContext(AuthContext);
+const Register = () => {
+  const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
 
-  //   const handleSingUp = (e) => {
-  //     e.preventDefault();
+  const handleSingUp = (e) => {
+    e.preventDefault();
 
-  //     const form = e.target;
-  //     const displayName = form.displayName.value;
-  //     const email = form.email.value;
-  //     const password = form.password.value;
-  //     const photoUrl = form.photoUrl.value;
+    const form = e.target;
+    const displayName = form.displayName.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photoUrl = form.photoUrl.value;
 
-  //     // Password validation regex pattern
-  //     const passwordRegex = /^.{6,}$/;
+    // Password validation regex pattern
+    const passwordRegex = /^.{6,}$/;
 
-  //     // Check for blank input fields
-  //     if (!displayName || !email || !password || !photoUrl) {
-  //       toast.error("A user cannot submit empty email and password fields");
-  //       return;
-  //     }
+    // Check for blank input fields
+    if (!displayName || !email || !password || !photoUrl) {
+      Swal.fire({
+        position: "top-start",
+        icon: "error",
+        title: "A user cannot submit empty email and password fields",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+      return;
+    }
 
-  //     if (!passwordRegex.test(password)) {
-  //       toast.error("The password is less than 6 characters");
-  //       return;
-  //     }
+    if (!passwordRegex.test(password)) {
+      // sweet alert
+      Swal.fire({
+        position: "top-start",
+        icon: "error",
+        title: "The password is less than 6 characters",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+      return;
+    }
 
-  //     createUser(email, password, displayName, photoUrl)
-  //       .then((result) => {
-  //         // User created successfully, update profile
-  //         const loggedUser = result.user;
-  //         return updateProfile(loggedUser, {
-  //           displayName: displayName,
-  //           photoURL: photoUrl,
-  //         }).then(() => {
-  //           console.log("Profile updated successfully");
-  //           console.log(loggedUser);
-  //           toast.success("User created successfully");
-  //           form.reset();
-  //         });
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error creating user:", error.message);
-  //         toast.error(error.message);
-  //       });
-  //   };
+    createUser(email, password, displayName, photoUrl)
+      .then((result) => {
+        // User create process, update profile
+        const loggedUser = result.user;
+        return updateProfile(loggedUser, {
+          displayName: displayName,
+          photoURL: photoUrl,
+        }).then(() => {
+          console.log("Profile updated successfully");
+          console.log(loggedUser);
+
+          Swal.fire({
+            position: "top-start",
+            icon: "success",
+            title: "User created successfully",
+            showConfirmButton: false,
+            timer: 3000,
+          });
+          form.reset();
+        });
+      })
+      .catch((error) => {
+        console.error("Error creating user:", error.message);
+        Swal.fire({
+          position: "top-start",
+          icon: "error",
+          title: `${error.message}`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
+  };
 
   // toggle show password
   const toggleShowPassword = () => {
@@ -89,7 +117,7 @@ const SignUp = () => {
       <div className="w-1/2">
         {/* Component: Card with form */}
         <form
-          // onSubmit={handleSingUp}
+          onSubmit={handleSingUp}
           className="max-w-[415px] h-[680px] mx-auto overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200"
         >
           {/* Body*/}
@@ -227,4 +255,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Register;

@@ -71,7 +71,7 @@ const Navbar = () => {
                 activeClassName="active text-[#757575] font-semibold hover:text-warning"
                 to="/login"
               >
-                Login
+                Sign in
               </NavLink>
             </li>
           </ul>
@@ -143,7 +143,7 @@ const Navbar = () => {
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
                   to="/login"
                 >
-                  Login
+                  Sign in
                 </NavLink>
               </li>
             </ul>
