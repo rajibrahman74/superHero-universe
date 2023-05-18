@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <header className="bg-gray-100 sticky top-0 z-10">
-      <nav className="navbar max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+      <nav className="navbar max-w-7xl mx-auto flex justify-between items-center px-4 py-5">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -76,7 +76,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="me-auto my-auto">
+        <div className="md:me-auto my-auto">
           <Link to="/">
             <div className="logo flex items-center">
               <div className="flex justify-center items-center">
@@ -97,7 +97,7 @@ const Navbar = () => {
         </div>
         <div>
           <div className="hidden lg:flex ms-auto me-5">
-            <ul className="flex items-center gap-6 px-1">
+            <ul className="flex items-center gap-7 px-1">
               <li>
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
