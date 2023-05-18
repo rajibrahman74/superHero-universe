@@ -1,74 +1,103 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-// import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../providers/AuthProviders";
-// import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-// import app from "../../firebase/firebase.config";
-// const auth = getAuth(app);
-// const googleProvider = new GoogleAuthProvider();
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  // const { singIn } = useContext(AuthContext);
+  const { singIn, googleSigIn } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   // const navigate = useNavigate();
   // const location = useLocation();
 
   // const from = location.state?.from?.pathname || "/";
 
-  // const handleLogIn = (e) => {
-  //   e.preventDefault();
+  const handleLogIn = (e) => {
+    e.preventDefault();
 
-  //   const form = e.target;
-  //   const email = form.email.value;
-  //   const password = form.password.value;
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
-  //   // Check for blank input fields
-  //   if (!email || !password) {
-  //     toast.error("A user cannot login empty email and password fields");
-  //     return;
-  //   }
+    // Check for blank input fields
+    if (!email || !password) {
+      // toast.error("A user cannot login empty email and password fields");
+      Swal.fire({
+        position: "top-start",
+        icon: "error",
+        title: "A user cannot sign in empty email and password fields",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+      return;
+    }
 
-  //   singIn(email, password)
-  //     .then((result) => {
-  //       const loggedUser = result.user;
-  //       console.log(loggedUser);
-  //       toast.success("User login successfully");
-  //       form.reset();
-  //       navigate(from, { replace: true });
-  //     })
-  //     .catch((error) => {
-  //       console.error(error.message);
-  //       if (error.code === "auth/wrong-password") {
-  //         toast.error("Incorrect password. Please try again.");
-  //       } else {
-  //         toast.error(error.message);
-  //       }
-  //     });
-  // };
+    singIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        // sweet alert
+        Swal.fire({
+          position: "top-start",
+          icon: "success",
+          title: "User sign in successfully",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        form.reset();
+        // navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error.message);
+        if (error.code === "auth/wrong-password") {
+          // sweet alert
+          Swal.fire({
+            position: "top-start",
+            icon: "error",
+            title: "Incorrect password. Please try again.",
+            showConfirmButton: false,
+            timer: 3000,
+          });
+        } else {
+          Swal.fire({
+            position: "top-start",
+            icon: "error",
+            title: `${error.message}`,
+            showConfirmButton: false,
+            timer: 3000,
+          });
+        }
+      });
+  };
 
   // toggle show password
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
-  // google login
-  // const handleWithGoogleSingIn = () => {
-  //   signInWithPopup(auth, googleProvider)
-  //     .then((result) => {
-  //       const loggedInGoogleUser = result.user;
-  //       console.log(loggedInGoogleUser);
-  //       toast.success("User login successfully");
-  //       navigate(from, { replace: true });
-  //     })
-  //     .catch((error) => {
-  //       console.error(error.message);
-  //       if (error.code === "auth/user-not-found") {
-  //         toast.error("User not found. Please sign up to continue.");
-  //       } else {
-  //         toast.error(error.message);
-  //       }
-  //     });
-  // };
+  // google sign in
+  const handleWithGoogleSingIn = () => {
+    googleSigIn()
+      .then((result) => {
+        console.log(result);
+        Swal.fire({
+          position: "top-start",
+          icon: "success",
+          title: "User created successfully",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      })
+      .catch((error) => {
+        console.error(error.message);
+        Swal.fire({
+          position: "top-start",
+          icon: "error",
+          title: `${error.message}`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
+  };
 
   return (
     <section className="max-w-7xl flex flex-col sm:flex-row justify-evenly mx-auto px-4 py-12">
@@ -82,7 +111,7 @@ const Login = () => {
       <div className="w-1/2">
         {/* Component: Card with form */}
         <form
-          // onSubmit={handleLogIn}
+          onSubmit={handleLogIn}
           className="max-w-[415px] h-[505px] mx-auto overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200"
         >
           {/* Body*/}
@@ -167,7 +196,7 @@ const Login = () => {
             <hr className="flex-1 border-t border-slate-200" />
           </div>
           <div
-            // onClick={handleWithGoogleSingIn}
+            onClick={handleWithGoogleSingIn}
             className="flex items-center justify-center gap-[6px] w-ful; mx-6 h-[50px] border border-slate-200 rounded-md cursor-pointer"
           >
             <img

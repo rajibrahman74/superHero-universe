@@ -54,7 +54,8 @@ const Register = () => {
         }).then(() => {
           console.log("Profile updated successfully");
           console.log(loggedUser);
-
+          
+          // sweet alert
           Swal.fire({
             position: "top-start",
             icon: "success",
