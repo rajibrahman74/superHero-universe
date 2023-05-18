@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="bg-gray-100 sticky top-0 z-10">
+    <header className="bg-[#eeeff1] sticky top-0 z-10">
       <nav className="navbar max-w-7xl mx-auto flex justify-between items-center px-4 py-5">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,7 +25,7 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
+            <li className="text-gray-900 font-medium">
               <NavLink
                 exact
                 activeclassName="active text-[#757575] font-semibold hover:text-warning"
@@ -34,7 +34,7 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            <li>
+            <li className="text-gray-900 font-medium">
               <NavLink
                 activeclassName="active text-[#757575] font-semibold hover:text-warning"
                 to="/blog"
@@ -42,7 +42,7 @@ const Navbar = () => {
                 Blog
               </NavLink>
             </li>
-            <li>
+            <li className="text-gray-900 font-medium">
               <NavLink
                 activeClassName="active text-[#757575] font-semibold hover:text-warning"
                 to="/"
@@ -50,7 +50,7 @@ const Navbar = () => {
                 All Toys
               </NavLink>
             </li>
-            <li>
+            <li className="text-gray-900 font-medium">
               <NavLink
                 activeClassName="active text-[#757575] font-semibold hover:text-warning"
                 to="/"
@@ -58,7 +58,7 @@ const Navbar = () => {
                 My Toys
               </NavLink>
             </li>
-            <li>
+            <li className="text-gray-900 font-medium">
               <NavLink
                 activeClassName="active text-[#757575] font-semibold hover:text-warning"
                 to="/"
@@ -66,7 +66,7 @@ const Navbar = () => {
                 Add A Toy
               </NavLink>
             </li>
-            <li>
+            <li className="text-gray-900 font-medium">
               <NavLink
                 activeClassName="active text-[#757575] font-semibold hover:text-warning"
                 to="/login"
@@ -97,8 +97,8 @@ const Navbar = () => {
         </div>
         <div>
           <div className="hidden lg:flex ms-auto me-5">
-            <ul className="flex items-center gap-7 px-1">
-              <li>
+            <ul className="flex items-center gap-8 px-1">
+              <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
                   to="/"
@@ -106,7 +106,7 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
                   to="/blog"
@@ -114,7 +114,7 @@ const Navbar = () => {
                   Blog
                 </NavLink>
               </li>
-              <li>
+              <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
                   to="/register"
@@ -122,7 +122,7 @@ const Navbar = () => {
                   All Toys
                 </NavLink>
               </li>
-              <li>
+              <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
                   to="/register"
@@ -130,7 +130,7 @@ const Navbar = () => {
                   My Toys
                 </NavLink>
               </li>
-              <li>
+              <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
                   to="/register"
@@ -138,7 +138,7 @@ const Navbar = () => {
                   Add A Toy
                 </NavLink>
               </li>
-              <li>
+              <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
                   to="/login"
