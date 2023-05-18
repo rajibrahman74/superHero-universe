@@ -3,18 +3,9 @@ import { updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
-// import {
-//   GoogleAuthProvider,
-//   getAuth,
-//   signInWithPopup,
-//   updateProfile,
-// } from "firebase/auth";
-
-// const auth = getAuth(app);
-// const googleProvider = new GoogleAuthProvider();
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleSigIn } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSingUp = (e) => {
@@ -92,18 +83,29 @@ const Register = () => {
   };
 
   // sign up with google
-  //   const handleWithGoogleSingUp = () => {
-  //     signInWithPopup(auth, googleProvider)
-  //       .then((result) => {
-  //         const loggedGoogleUser = result.user;
-  //         // console.log(loggedGoogleUser);
-  //         toast.success("User created successfully");
-  //       })
-  //       .catch((error) => {
-  //         console.error(error.message);
-  //         toast.error(error.message);
-  //       });
-  //   };
+  const handleWithGoogleSingUp = () => {
+    googleSigIn()
+      .then((result) => {
+        console.log(result);
+        Swal.fire({
+          position: "top-start",
+          icon: "success",
+          title: "User created successfully",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      })
+      .catch((error) => {
+        console.error(error.message);
+        Swal.fire({
+          position: "top-start",
+          icon: "error",
+          title: `${error.message}`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
+  };
 
   return (
     <section className="max-w-7xl flex flex-col sm:flex-row items-start justify-evenly mx-auto px-4 py-12">
@@ -238,7 +240,7 @@ const Register = () => {
             <hr className="flex-1 border-t border-slate-200" />
           </div>
           <div
-            //   onClick={handleWithGoogleSingUp}
+            onClick={handleWithGoogleSingUp}
             className="flex items-center justify-center gap-[6px] w-ful; mx-6 h-[50px] border border-slate-200 rounded-md cursor-pointer"
           >
             <img
