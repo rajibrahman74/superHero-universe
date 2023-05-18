@@ -200,7 +200,7 @@ const SignUp = () => {
           </div>
           <div className="-mt-1 text-center text-md transition text-slate-400 peer-invalid:text-pink-500">
             Already have an account?
-            <Link className="ml-1 text-success font-semibold" to="/login">
+            <Link className="ml-1 text-warning font-semibold" to="/login">
               Sign in
             </Link>
           </div>

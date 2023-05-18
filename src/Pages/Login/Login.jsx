@@ -157,7 +157,7 @@ const Login = () => {
           </div>
           <div className="-mt-1 text-center text-md transition text-slate-400 peer-invalid:text-pink-500">
             Create New Account
-            <Link className="ml-1 tex-warning font-semibold" to="/signup">
+            <Link className="ml-1 text-warning font-semibold" to="/signup">
               Sign up
             </Link>
           </div>
