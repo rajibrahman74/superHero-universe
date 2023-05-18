@@ -10,15 +10,15 @@ const Footer = () => {
             <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
               <div className="logo flex items-center">
                 <div className="flex justify-center items-center">
-                  <span className="superhero text-[#e6281a] font-bold text-base md:text-[22px] -mr-5">
+                  <span className="superhero text-[#e6281a] font-bold text-base md:text-[18px] -mr-5">
                     superHero
                   </span>
                   <img
-                    className="logo-image mr-2 w-20 h-12"
+                    className="logo-image mr-2 w-16 h-10"
                     src="https://i.ibb.co/r22wffD/logo.png"
                     alt="Logo"
                   />
-                  <span className="universe text-[#c3ad42] font-bold text-base md:text-[22px] -ml-7">
+                  <span className="universe text-[#c3ad42] font-bold text-base md:text-[18px] -ml-7">
                     Universe
                   </span>
                 </div>
