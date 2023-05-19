@@ -6,6 +6,7 @@ import Blog from "../Pages/Blogs/Blog";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Register from "../Pages/SingUp/Register";
 import HeroDetails from "../Pages/Shared/HeroDetails/HeroDetails";
+import AllToys from "../Pages/AllToys/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,17 @@ const router = createBrowserRouter([
         element: <HeroDetails />,
         loader: ({ params }) =>fetch(`http://localhost:5000/herotoys/${params.id}`),
       },
+      {
+        path:"alltoys",
+        element: <AllToys/>,
+        loader: () => fetch("http://localhost:5000/herotoys"),
+      },
+      {
+        path: "alltoys/:id",
+        element: <HeroDetails />,
+        loader: ({ params }) =>fetch(`http://localhost:5000/herotoys/${params.id}`),
+      },
+
       {
         path: "blog",
         element: <Blog />,

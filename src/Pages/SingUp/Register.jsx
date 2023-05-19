@@ -54,7 +54,7 @@ const Register = () => {
         }).then(() => {
           console.log("Profile updated successfully");
           console.log(loggedUser);
-          
+
           // sweet alert
           Swal.fire({
             position: "top-start",
@@ -224,7 +224,7 @@ const Register = () => {
           <div className="flex justify-end p-6 -mt-5">
             <button
               type="submit"
-              className="btn border-0 inline-flex items-center justify-center w-full h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-warning disabled:cursor-not-allowed disabled:borde"
+              className="btn border-0 inline-flex items-center justify-center w-full h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded-none focus-visible:outline-none whitespace-nowrap bg-warning disabled:cursor-not-allowed disabled:borde"
             >
               <span>Sign up</span>
             </button>
@@ -242,10 +242,10 @@ const Register = () => {
           </div>
           <div
             onClick={handleWithGoogleSingUp}
-            className="flex items-center justify-center gap-[6px] w-ful; mx-6 h-[50px] border border-slate-200 rounded-md cursor-pointer"
+            className="flex items-center justify-center gap-[6px] w-ful; mx-6 h-[50px] border border-slate-200  cursor-pointer"
           >
             <img
-              className="w-11 h-11 rounded-md"
+              className="w-11 h-11 "
               src="https://i.ibb.co/WDm81SD/unnamed-removebg-preview.png"
               alt=""
             />

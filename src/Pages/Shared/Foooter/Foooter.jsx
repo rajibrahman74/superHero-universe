@@ -18,7 +18,7 @@ const Footer = () => {
                     src="https://i.ibb.co/r22wffD/logo.png"
                     alt="Logo"
                   />
-                  <span className="universe text-[#c3ad42] font-bold text-base md:text-[18px] -ml-7">
+                  <span className="universe text-[#c3ad42] font-bold text-base md:text-[18px] -ml-7 font-extrabold">
                     Universe
                   </span>
                 </div>

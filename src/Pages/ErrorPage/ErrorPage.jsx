@@ -18,14 +18,14 @@ const ErrorPage = () => {
           </div>
           <a
             href="/"
-            className="btn border-0 bg-success text-white font-bold py-2 px-4 rounded-md mt-8 animate-pulse"
+            className="btn border-0 bg-success text-white font-bold py-2 px-4  mt-8 animate-pulse"
           >
             Go back home
           </a>
           <img
             src="https://media.istockphoto.com/id/1222806141/photo/computer-error.jpg?b=1&s=170667a&w=0&k=20&c=2LBPYkEmvRiBa0EAPX_ghqncT5Xcv7xvgrlCx4Wf9-M="
             alt="404 Error"
-            className="mt-8 w-80 rounded-md"
+            className="mt-8 w-80 "
           />
         </div>
       </div>

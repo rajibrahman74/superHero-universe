@@ -5,24 +5,29 @@ import "react-tabs/style/react-tabs.css";
 
 const HeroCategories = () => {
   const toys = useLoaderData();
-  const [setActiveCategory] = useState("");
+  const [activeCategory, setActiveCategory] = useState("");
 
   // Get unique categories
   const categories = ["All", ...new Set(toys.map((toy) => toy.category))];
 
+  // handle active category
   const handleTabSelect = (index) => {
     setActiveCategory(categories[index]);
   };
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto px-4 py-20">
+      <h2 className="text-center text-4xl font-bold pb-12">
+        Shopping with{" "}
+        <span className="text-blue-800 font-extrabold">Categories</span>
+      </h2>
       <Tabs onSelect={handleTabSelect}>
-        <TabList className="flex">
+        <TabList className="flex justify-center items-center flex-wrap mx-auto pb-8">
           {categories.map((category) => (
             <Tab
               key={category}
-              className="px-4 py-2 bg-gray-200 mr-2 rounded-md cursor-pointer"
-              selectedClassName="bg-blue-500 text-white"
+              className="px-4 py-2 bg-gray-200 mt-2 mr-2 md:mr-2 cursor-pointer font-semibold border-0 outline-none rounded-none"
+              selectedClassName="bg-warning text-white font-bold"
             >
               {category}
             </Tab>
@@ -31,7 +36,7 @@ const HeroCategories = () => {
 
         {categories.map((category) => (
           <TabPanel key={category}>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4">
               {toys
                 .filter(
                   (toy) => category === "All" || toy.category === category
@@ -39,19 +44,20 @@ const HeroCategories = () => {
                 .map((toy) => (
                   <div
                     key={toy.id}
-                    className="bg-white p-4 rounded-md shadow-md relative"
+                    className="bg-white p-4  shadow-md relative"
                   >
                     <img
                       src={toy.picture}
                       alt={toy.name}
                       className="w-full h-auto"
                     />
-                    <h3 className="text-lg font-bold mt-2">{toy.name}</h3>
-                    <p className="text-gray-600">{toy.price}</p>
-                    <p className="text-gray-600">Rating: {toy.rating}</p>
-                    <Link to={`/herocategories/${toy._id}`}>
-                      {" "}
-                      <button className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">
+                    <h3 className="text-xl font-semibold mt-2">{toy.name}</h3>
+                    <p className="text-gray-600 text-lg">{toy.price}</p>
+                    <p className="text-gray-600 text-lg">
+                      Rating: {toy.rating}
+                    </p>
+                    <Link className="" to={`/herocategories/${toy._id}`}>
+                      <button className="btn rounded-none border-0 text-white bg-warning px-5 py-1.5  mt-4">
                         View Details
                       </button>
                     </Link>

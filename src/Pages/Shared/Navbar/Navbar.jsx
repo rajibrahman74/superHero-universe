@@ -63,7 +63,7 @@ const Navbar = () => {
             <li className="text-gray-900 font-medium">
               <NavLink
                 activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                to="/"
+                to="/alltoys"
               >
                 All Toys
               </NavLink>
@@ -102,7 +102,7 @@ const Navbar = () => {
           <Link to="/">
             <div className="logo flex items-center">
               <div className="flex justify-center items-center">
-                <span className="superhero text-[#e6281a] font-bold text-base md:text-[22px] -mr-5">
+                <span className="superhero text-warning font-bold text-base md:text-[22px] -mr-5">
                   superHero
                 </span>
                 <img
@@ -110,7 +110,7 @@ const Navbar = () => {
                   src="https://i.ibb.co/r22wffD/logo.png"
                   alt="Logo"
                 />
-                <span className="universe text-[#c3ad42] font-bold text-base md:text-[22px] -ml-7">
+                <span className="universe text-[#c3ad42] font-bold text-base md:text-[22px] -ml-7 font-extrabold">
                   Universe
                 </span>
               </div>
@@ -138,7 +138,7 @@ const Navbar = () => {
             <li className="text-gray-900 font-medium">
               <NavLink
                 activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                to="/register"
+                to="/alltoys"
               >
                 All Toys
               </NavLink>
@@ -186,7 +186,7 @@ const Navbar = () => {
                 />
                 <button
                   onClick={handleLogOut}
-                  className="btn border-0 text-white bg-warning px-4 py-2 font-bold rounded-md flex items-center gap-1"
+                  className="btn border-0 text-white bg-warning px-6 py-2 font-bold  flex items-center gap-1 rounded-none"
                 >
                   <ArrowLeftOnRectangleIcon className="h-5 w-5" />
                   Logout
