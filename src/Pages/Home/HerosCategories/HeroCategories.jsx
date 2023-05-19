@@ -5,7 +5,7 @@ import "react-tabs/style/react-tabs.css";
 
 const HeroCategories = () => {
   const toys = useLoaderData();
-  const [activeCategory, setActiveCategory] = useState("");
+  const [setActiveCategory] = useState("");
 
   // Get unique categories
   const categories = ["All", ...new Set(toys.map((toy) => toy.category))];
@@ -49,7 +49,7 @@ const HeroCategories = () => {
                     <h3 className="text-lg font-bold mt-2">{toy.name}</h3>
                     <p className="text-gray-600">{toy.price}</p>
                     <p className="text-gray-600">Rating: {toy.rating}</p>
-                    <Link to={`/categories/${toy._id}`}>
+                    <Link to={`/herocategories/${toy._id}`}>
                       {" "}
                       <button className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">
                         View Details

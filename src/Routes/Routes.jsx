@@ -5,6 +5,7 @@ import Login from "../Pages/Login/Login";
 import Blog from "../Pages/Blogs/Blog";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Register from "../Pages/SingUp/Register";
+import HeroDetails from "../Pages/Shared/HeroDetails/HeroDetails";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/herotoys")
+        loader: () => fetch("http://localhost:5000/herotoys"),
+      },
+      {
+        path: "herocategories/:id",
+        element: <HeroDetails />,
+        loader: ({ params }) =>fetch(`http://localhost:5000/herotoys/${params.id}`),
       },
       {
         path: "blog",
