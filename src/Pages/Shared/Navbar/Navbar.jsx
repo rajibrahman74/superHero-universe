@@ -68,22 +68,26 @@ const Navbar = () => {
                 All Toys
               </NavLink>
             </li>
-            <li className="text-gray-900 font-medium">
-              <NavLink
-                activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                to="/"
-              >
-                My Toys
-              </NavLink>
-            </li>
-            <li className="text-gray-900 font-medium">
-              <NavLink
-                activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                to="/"
-              >
-                Add A Toy
-              </NavLink>
-            </li>
+            {user && (
+              <li className="text-gray-900 font-medium">
+                <NavLink
+                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                  to="/"
+                >
+                  My Toys
+                </NavLink>
+              </li>
+            )}
+            {user && (
+              <li className="text-gray-900 font-medium">
+                <NavLink
+                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                  to="/"
+                >
+                  Add A Toy
+                </NavLink>
+              </li>
+            )}
             <li className="text-gray-900 font-medium">
               <NavLink
                 activeClassName="active text-[#757575] font-semibold hover:text-warning"
@@ -94,7 +98,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="md:me-auto my-auto">
+        <div className="my-auto">
           <Link to="/">
             <div className="logo flex items-center">
               <div className="flex justify-center items-center">
@@ -113,32 +117,33 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
-          <div className="hidden lg:flex me-auto">
-            <ul className="flex items-center gap-6 px-1">
-              <li className="text-gray-900 font-medium">
-                <NavLink
-                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                  to="/"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className="text-gray-900 font-medium">
-                <NavLink
-                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                  to="/blog"
-                >
-                  Blog
-                </NavLink>
-              </li>
-              <li className="text-gray-900 font-medium">
-                <NavLink
-                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                  to="/register"
-                >
-                  All Toys
-                </NavLink>
-              </li>
+        <div className={`hidden lg:flex ${user ? "mx-auto" : "ms-auto"}`}>
+          <ul className="flex items-center gap-6 px-1">
+            <li className="text-gray-900 font-medium">
+              <NavLink
+                activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                to="/"
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="text-gray-900 font-medium">
+              <NavLink
+                activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                to="/blog"
+              >
+                Blog
+              </NavLink>
+            </li>
+            <li className="text-gray-900 font-medium">
+              <NavLink
+                activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                to="/register"
+              >
+                All Toys
+              </NavLink>
+            </li>
+            {user && (
               <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
@@ -147,6 +152,8 @@ const Navbar = () => {
                   My Toys
                 </NavLink>
               </li>
+            )}
+            {user && (
               <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
@@ -155,20 +162,21 @@ const Navbar = () => {
                   Add A Toy
                 </NavLink>
               </li>
-              <li className="text-gray-900 font-medium">
-                <NavLink
-                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                  to="/login"
-                >
-                  Sign in
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+            )}
+            <li className="text-gray-900 font-medium">
+              <NavLink
+                activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                to="/login"
+              >
+                Sign in
+              </NavLink>
+            </li>
+          </ul>
+        </div>
         <div>
           <div className="flex items-center justify-center">
             {/* conditional rendaring */}
-            {user ? (
+            {user && (
               <div className="flex items-center justify-center gap-6">
                 <img
                   title={user.displayName}
@@ -184,8 +192,6 @@ const Navbar = () => {
                   Logout
                 </button>
               </div>
-            ) : (
-              <></>
             )}
           </div>
         </div>

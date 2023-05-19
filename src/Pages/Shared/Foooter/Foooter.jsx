@@ -8,8 +8,8 @@ const Footer = () => {
         <footer className="w-full px-4 mx-auto text-gray-700 bg-gray-100 body-font">
           <div className="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
             <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
-              <div className="logo flex items-center">
-                <div className="flex justify-center items-center">
+              <div className="logo flex items-center mx-auto md:mx-0">
+                <div className="flex justify-center items-center mx-auto md:mx-0">
                   <span className="superhero text-[#e6281a] font-bold text-base md:text-[18px] -mr-5">
                     superHero
                   </span>
@@ -192,7 +192,7 @@ const Footer = () => {
           </div>
           <div className="bg-gray-300">
             <div className="container px-5 py-4 mx-auto">
-              <p className="text-sm text-gray-700 capitalize xl:text-center">
+              <p className="text-sm text-gray-700 capitalize text-center mx-auto">
                 © 2023 All rights reserved superHero Universe
               </p>
             </div>
