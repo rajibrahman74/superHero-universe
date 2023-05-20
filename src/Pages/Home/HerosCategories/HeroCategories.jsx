@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { StarIcon } from "@heroicons/react/24/solid";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import clsx from "clsx";
 
 const HeroCategories = () => {
   const toys = useLoaderData();
   const [activeCategory, setActiveCategory] = useState("");
   console.log(activeCategory);
+  console.log(toys);
 
   // Get unique categories
   const categories = ["All", ...new Set(toys.map((toy) => toy.category))];
@@ -45,7 +48,7 @@ const HeroCategories = () => {
                 .map((toy) => (
                   <div
                     key={toy.id}
-                    className="bg-[#f2f2f2] p-4  shadow-md relative"
+                    className="bg-white p-4  shadow-md relative"
                   >
                     <img
                       src={toy.picture}
@@ -53,10 +56,25 @@ const HeroCategories = () => {
                       className="w-full h-auto"
                     />
                     <h3 className="text-xl font-semibold mt-2">{toy.name}</h3>
-                    <p className="text-gray-600 text-lg">{toy.price}</p>
-                    <p className="text-gray-600 text-lg">
-                      Rating: {toy.rating}
-                    </p>
+                    <p className="text-gray-600 text-lg">Price: {toy.price}</p>
+                    <div className="flex items-center">
+                      <span className="mr-1">Rating:</span>
+                      {Array.from({ length: 5 }).map((_, index) => {
+                        const rating = Math.round(toy.rating);
+                        return (
+                          <StarIcon
+                            key={index}
+                            className={clsx(
+                              "h-5 w-5",
+                              index < rating
+                                ? "text-yellow-400"
+                                : "text-gray-300"
+                            )}
+                          />
+                        );
+                      })}
+                    </div>
+
                     <Link className="" to={`/herocategories/${toy._id}`}>
                       <button className="rounded-none border-0 text-white bg-warning px-5 py-2.5 mt-4 hover:bg-black">
                         View Details
