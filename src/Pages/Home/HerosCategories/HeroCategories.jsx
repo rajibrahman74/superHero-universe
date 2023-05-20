@@ -6,6 +6,7 @@ import "react-tabs/style/react-tabs.css";
 const HeroCategories = () => {
   const toys = useLoaderData();
   const [activeCategory, setActiveCategory] = useState("");
+  console.log(activeCategory);
 
   // Get unique categories
   const categories = ["All", ...new Set(toys.map((toy) => toy.category))];
@@ -36,7 +37,7 @@ const HeroCategories = () => {
 
         {categories.map((category) => (
           <TabPanel key={category}>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-10">
               {toys
                 .filter(
                   (toy) => category === "All" || toy.category === category
@@ -44,7 +45,7 @@ const HeroCategories = () => {
                 .map((toy) => (
                   <div
                     key={toy.id}
-                    className="bg-white p-4  shadow-md relative"
+                    className="bg-[#f2f2f2] p-4  shadow-md relative"
                   >
                     <img
                       src={toy.picture}
@@ -57,7 +58,7 @@ const HeroCategories = () => {
                       Rating: {toy.rating}
                     </p>
                     <Link className="" to={`/herocategories/${toy._id}`}>
-                      <button className="btn rounded-none border-0 text-white bg-warning px-5 py-1.5  mt-4">
+                      <button className="rounded-none border-0 text-white bg-warning px-5 py-2.5 mt-4 hover:bg-black">
                         View Details
                       </button>
                     </Link>

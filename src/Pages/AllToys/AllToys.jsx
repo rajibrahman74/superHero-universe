@@ -34,7 +34,7 @@ const AllToys = () => {
   const displayedToys = filteredToys.slice(0, limit);
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto px-4">
       <h1 className="text-4xl">Your bookings {displayedToys.length}</h1>
       <div className="overflow-x-auto w-full">
         <div className="mt-4">
@@ -63,7 +63,7 @@ const AllToys = () => {
         </div>
 
         <table className="table w-full">
-          <thead>
+          <thead className="text-center">
             <tr>
               <th>Image</th>
               <th>Seller</th>

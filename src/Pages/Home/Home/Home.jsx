@@ -1,3 +1,4 @@
+import Gallery from "../Gallery/Gallery";
 import Header from "../Header/Header";
 import HeroCategories from "../HerosCategories/HeroCategories";
 
@@ -5,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      {/* Gellery */}
+      <Gallery />
       <HeroCategories />
     </div>
   );

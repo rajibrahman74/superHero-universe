@@ -8,7 +8,7 @@ const Header = () => {
           <div className="text text-[55px] max-w-[400px] font-bold">
             <h1>
               Explore the World of{" "}
-              <span className="whitespace-nowrap text-warning font-extrabold">
+              <span className="whitespace-nowrap text-blue-800 font-extrabold">
                 Superheros !
               </span>
             </h1>
