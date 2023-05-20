@@ -30,7 +30,7 @@ const Toys = ({ toy }) => {
               <StarIcon
                 key={index}
                 className={clsx(
-                  "h-5 w-5",
+                  "h-4 w-4",
                   index < rating ? "text-yellow-400" : "text-gray-300"
                 )}
               />

@@ -100,20 +100,13 @@ const Login = () => {
   };
 
   return (
-    <section className="max-w-7xl flex flex-col sm:flex-row justify-evenly mx-auto px-4 py-12">
+    <section className="max-w-7xl flex flex-col sm:flex-row items-start justify-between mx-auto px-4 py-12">
       <style
         dangerouslySetInnerHTML={{
           __html:
             "@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);",
         }}
       />
-      <div className="w-1/2">
-        <img
-          className="w-[75%]"
-          src="https://i.ibb.co/jMSywVG/login-page-2578971-2147152-removebg-preview.png"
-          alt=""
-        />
-      </div>
       <div className="w-1/2">
         {/* Component: Card with form */}
         <form
@@ -185,14 +178,14 @@ const Login = () => {
           <div className="flex justify-end p-6 -mt-5">
             <button
               type="submit"
-              className="btn border-0 inline-flex items-center justify-center w-full h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded-none focus-visible:outline-none whitespace-nowrap bg-warning  opacity-75disabled:cursor-not-allowed disabled:borde "
+              className="btn border-0 inline-flex items-center justify-center w-full h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded-none focus-visible:outline-none whitespace-nowrap bg-warning  opacity-75 disabled:cursor-not-allowed disabled:borde "
             >
               <span>Sign in</span>
             </button>
           </div>
           <div className="-mt-1 text-center text-md transition text-slate-400 peer-invalid:text-pink-500">
             Create New Account
-            <Link className="ml-1 text-warning font-semibold" to="/signup">
+            <Link className="ml-1 text-warning opacity-75 font-semibold" to="/signup">
               Sign up
             </Link>
           </div>
@@ -214,6 +207,13 @@ const Login = () => {
           </div>
         </form>
         {/* End Card with form */}
+      </div>
+      <div className="w-1/2">
+        <img
+          className="w-[75%]"
+          src="https://i.ibb.co/vkNs1LY/wepik-export-20230520141316e-Fe-C.png"
+          alt=""
+        />
       </div>
     </section>
   );

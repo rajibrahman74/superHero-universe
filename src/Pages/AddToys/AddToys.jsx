@@ -156,7 +156,7 @@ const AddToys = () => {
 
           <button
             type="submit"
-            className="w-full py-3 mt-6 font-medium tracking-widest text-white  bg-blue-900 shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none"
+            className="w-full py-3 mt-6 font-medium tracking-widest text-white  bg-warning opacity-75 shadow-lg focus:outline-none hover:bg-black hover:shadow-none"
           >
             Add Toy
           </button>
