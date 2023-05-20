@@ -55,9 +55,9 @@ const HeroCategories = () => {
                       alt={toy.name}
                       className="w-full h-auto"
                     />
-                    <h3 className="text-xl font-semibold mt-2">{toy.name}</h3>
-                    <p className="text-gray-600 text-lg">Price: {toy.price}</p>
-                    <div className="flex items-center">
+                    <h3 className="text-xl font-semibold mt-2 py-1">{toy.name}</h3>
+                    <p className="text-gray-600 text-lg py-1">Price: {toy.price}</p>
+                    <div className="flex items-center py-1">
                       <span className="mr-1">Rating:</span>
                       {Array.from({ length: 5 }).map((_, index) => {
                         const rating = Math.round(toy.rating);

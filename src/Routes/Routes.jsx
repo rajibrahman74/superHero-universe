@@ -7,6 +7,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Register from "../Pages/SingUp/Register";
 import HeroDetails from "../Pages/Shared/HeroDetails/HeroDetails";
 import AllToys from "../Pages/AllToys/AllToys";
+import PrivateRouts from "./PrivateRouts";
 
 const router = createBrowserRouter([
   {
@@ -21,18 +22,28 @@ const router = createBrowserRouter([
       },
       {
         path: "herocategories/:id",
-        element: <HeroDetails />,
-        loader: ({ params }) =>fetch(`http://localhost:5000/herotoys/${params.id}`),
+        element: (
+          <PrivateRouts>
+            <HeroDetails />
+          </PrivateRouts>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/herotoys/${params.id}`),
       },
       {
-        path:"alltoys",
-        element: <AllToys/>,
+        path: "alltoys",
+        element: <AllToys />,
         loader: () => fetch("http://localhost:5000/herotoys"),
       },
       {
         path: "alltoys/:id",
-        element: <HeroDetails />,
-        loader: ({ params }) =>fetch(`http://localhost:5000/herotoys/${params.id}`),
+        element: (
+          <PrivateRouts>
+            <HeroDetails />
+          </PrivateRouts>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/herotoys/${params.id}`),
       },
 
       {

@@ -6,7 +6,7 @@ const HeroDetails = () => {
     console.log(heroToys);
     return (
         <div>
-            <h2>This is heor details</h2>
+            <h2 className="text-5xl text-center">This is heor details</h2>
         </div>
     );
 };

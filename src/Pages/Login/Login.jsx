@@ -1,15 +1,15 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const { singIn, googleSigIn } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -20,7 +20,6 @@ const Login = () => {
 
     // Check for blank input fields
     if (!email || !password) {
-      // toast.error("A user cannot login empty email and password fields");
       Swal.fire({
         position: "top-start",
         icon: "error",
@@ -44,7 +43,7 @@ const Login = () => {
           timer: 3000,
         });
         form.reset();
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error.message);
@@ -86,6 +85,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 3000,
         });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error.message);
