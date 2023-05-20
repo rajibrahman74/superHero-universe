@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
+
 const AddToys = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
   const handleAddToy = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -51,6 +57,7 @@ const AddToys = () => {
                 id="sellername"
                 type="text"
                 name="sellername"
+                defaultValue={user ? user.displayName : ""}
                 className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                 required
               />
@@ -107,6 +114,7 @@ const AddToys = () => {
             id="selleremail"
             type="email"
             name="selleremail"
+            defaultValue={user ? user.email : ""}
             className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
             required=""
           />
@@ -114,7 +122,7 @@ const AddToys = () => {
             <label className="block mt-2  font-bold text-gray-600 ">
               Sub category
             </label>
-            <select
+            {/* <select
               name="subcategory"
               id="subcategory"
               className="border border-gray-100 px-4 py-2 rounded w-full"
@@ -122,17 +130,26 @@ const AddToys = () => {
               <option value="Marvel Toys">Marvel Toys</option>
               <option value="DC Toys">DC Toys</option>
               <option value="Transformer Toys">Transformer Toys</option>
+            </select> */}
+            <select
+              name="subcategory"
+              id="subcategory"
+              className="select select-bordered w-full max-w-full rounded-none"
+            >
+              <option value="Marvel Toys">Marvel Toys</option>
+              <option value="DC Toys">DC Toys</option>
+              <option value="Transformer Toys">Transformer Toys</option>
             </select>
           </span>
-          <span className="mt-4">
-            <label className="py-3 block mt-3  font-bold text-gray-600 ">
+          <span>
+            <label className="py-3 block  font-bold text-gray-600 ">
               Descriptions
             </label>
             <textarea
-              className="text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+              className="text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner p-3"
               name="description"
               id="description"
-              cols="65"
+              cols="63"
               rows="5"
             ></textarea>
           </span>

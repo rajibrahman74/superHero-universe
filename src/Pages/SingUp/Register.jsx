@@ -110,6 +110,12 @@ const Register = () => {
 
   return (
     <section className="max-w-7xl flex flex-col sm:flex-row items-start justify-evenly mx-auto px-4 py-12">
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);",
+        }}
+      />
       <div className="w-1/2">
         <img
           className="w-[75%]"

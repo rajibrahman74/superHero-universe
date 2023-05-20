@@ -32,6 +32,12 @@ const AllToys = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-6">
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);",
+        }}
+      />
       <h1 className="text-3xl text-center my-12 font-bold">
         All <span className="text-blue-800 font-extrabold">Toys</span>
       </h1>
@@ -70,12 +76,18 @@ const AllToys = () => {
         <table className="table w-full">
           <thead className="text-cente">
             <tr>
-              <th className="text-blue-800 font-bold text-[15px] text-center">Image</th>
-              <th className="text-blue-800 font-bold text-[15px]">Seller name</th>
+              <th className="text-blue-800 font-bold text-[15px] text-center">
+                Image
+              </th>
+              <th className="text-blue-800 font-bold text-[15px]">
+                Seller name
+              </th>
               <th className="text-blue-800 font-bold text-[15px]">toy Name</th>
               <th className="text-blue-800 font-bold text-[15px]">Quantity</th>
               <th className="text-blue-800 font-bold text-[15px]">Price</th>
-              <th className="text-blue-800 font-bold text-[15px] text-center">Ratings</th>
+              <th className="text-blue-800 font-bold text-[15px] text-center">
+                Ratings
+              </th>
               <th className="text-blue-800 font-bold text-[15px]"></th>
             </tr>
           </thead>

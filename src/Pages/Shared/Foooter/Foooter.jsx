@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <section className="relative">
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);",
+        }}
+      />
       {/* component */}
       <div className="absolute top-0 flex items-end w-full bg-white">
         <footer className="w-full px-4 mx-auto text-gray-700 bg-gray-100 body-font">
@@ -10,7 +16,7 @@ const Footer = () => {
             <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
               <div className="logo flex items-center mx-auto md:mx-0">
                 <div className="flex justify-center items-center mx-auto md:mx-0">
-                  <span className="superhero text-[#e6281a] font-bold text-base md:text-[18px] -mr-5">
+                  <span className="superhero text-warning opacity-75 font-bold text-base md:text-[18px] -mr-5">
                     superHero
                   </span>
                   <img
@@ -18,7 +24,7 @@ const Footer = () => {
                     src="https://i.ibb.co/r22wffD/logo.png"
                     alt="Logo"
                   />
-                  <span className="universe text-[#c3ad42] font-bold text-base md:text-[18px] -ml-7 font-extrabold">
+                  <span className="universe text-[#c3ad42] text-base md:text-[18px] -ml-7 font-extrabold">
                     Universe
                   </span>
                 </div>

@@ -19,7 +19,13 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-[#eeeff1] sticky top-0 z-10">
+    <header className="bg-[#eeeff1] sticky top-0 z-[100]">
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);",
+        }}
+      />
       <nav className="navbar max-w-7xl mx-auto flex justify-between items-center px-4 py-5">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -101,7 +107,7 @@ const Navbar = () => {
           <Link to="/">
             <div className="logo flex items-center">
               <div className="flex justify-center items-center">
-                <span className="superhero text-warning font-bold text-base md:text-[22px] -mr-5">
+                <span className="superhero text-warning opacity-75 font-bold text-base md:text-[22px] -mr-5">
                   superHero
                 </span>
                 <img
@@ -109,7 +115,7 @@ const Navbar = () => {
                   src="https://i.ibb.co/r22wffD/logo.png"
                   alt="Logo"
                 />
-                <span className="universe text-[#c3ad42] font-bold text-base md:text-[22px] -ml-7 font-extrabold">
+                <span className="universe text-[#c3ad42] text-base md:text-[22px] -ml-7 font-extrabold">
                   Universe
                 </span>
               </div>
@@ -185,7 +191,7 @@ const Navbar = () => {
                 />
                 <button
                   onClick={handleLogOut}
-                  className="btn border-0 text-white bg-warning px-6 py-2 font-bold  flex items-center gap-1 rounded-none"
+                  className="btn border-0 text-white bg-warning opacity-75 px-6 py-2 font-bold  flex items-center gap-1 rounded-none"
                 >
                   <ArrowLeftOnRectangleIcon className="h-5 w-5" />
                   Logout

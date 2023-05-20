@@ -7,6 +7,12 @@ const Toys = ({ toy }) => {
   // console.log(toy);
   return (
     <tr className="t mx-auto">
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);",
+        }}
+      />
       <td>
         <div className="avatar">
           <div className="rounded w-24 h-24">{<img src={picture} />}</div>
@@ -34,7 +40,7 @@ const Toys = ({ toy }) => {
       </td>
       <th className="text-center">
         <Link to={`/alltoys/${_id}`}>
-          <button className="border-0 py-2 text-white hover:bg-black px-4 bg-warning">
+          <button className="border-0 py-2 opacity-75 text-white hover:bg-black px-4 bg-warning">
             View Details
           </button>
         </Link>

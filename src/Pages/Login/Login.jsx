@@ -101,6 +101,12 @@ const Login = () => {
 
   return (
     <section className="max-w-7xl flex flex-col sm:flex-row justify-evenly mx-auto px-4 py-12">
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);",
+        }}
+      />
       <div className="w-1/2">
         <img
           className="w-[75%]"
@@ -179,7 +185,7 @@ const Login = () => {
           <div className="flex justify-end p-6 -mt-5">
             <button
               type="submit"
-              className="btn border-0 inline-flex items-center justify-center w-full h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded-none focus-visible:outline-none whitespace-nowrap bg-warning disabled:cursor-not-allowed disabled:borde "
+              className="btn border-0 inline-flex items-center justify-center w-full h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded-none focus-visible:outline-none whitespace-nowrap bg-warning  opacity-75disabled:cursor-not-allowed disabled:borde "
             >
               <span>Sign in</span>
             </button>
