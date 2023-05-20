@@ -70,7 +70,7 @@ const HeroDetails = () => {
               <div>
                 <div className="inline-block align-bottom mr-5">
                   <span className="font-bold text-5xl leading-none align-baseline">
-                    {price}
+                    ${price}
                   </span>
                 </div>
                 <div className="inline-block align-bottom">

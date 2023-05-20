@@ -42,11 +42,12 @@ const AddToys = () => {
           Swal.fire({
             position: "top-start",
             icon: "success",
-            title: "User created successfully",
+            title: "Add new toy successfully",
             showConfirmButton: false,
             timer: 3000,
           });
         }
+        form.reset()
       });
   };
   return (

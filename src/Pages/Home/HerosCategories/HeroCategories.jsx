@@ -65,7 +65,7 @@ const HeroCategories = () => {
                       {toy.name}
                     </h3>
                     <p className="text-gray-600 text-lg py-1">
-                      Price: {toy.price}
+                      Price: ${toy.price}
                     </p>
                     <div className="flex items-center py-1">
                       <span className="mr-1">Rating:</span>

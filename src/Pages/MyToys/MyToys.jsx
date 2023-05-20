@@ -1,13 +1,60 @@
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
+import MyToy from "./MyToy";
+
 const MyToys = () => {
+  const { user } = useContext(AuthContext);
+  const [myToys, setMyToys] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/mytoys?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setMyToys(data));
+  }, []);
+
+  console.log(myToys);
+
   return (
-    <div>
+    <div className="max-w-7xl mx-auto px-6">
       <style
         dangerouslySetInnerHTML={{
           __html:
             "@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);",
         }}
       />
-      <h2>This my toys page</h2>
+      <h1 className="text-3xl text-center my-12 font-bold">
+        My <span className="text-blue-800 font-extrabold">Toys</span>
+      </h1>
+      <div className="overflow-x-auto w-full">
+        <table className="table w-full">
+          <thead className="text-cente">
+            <tr>
+              
+              <th className="text-blue-800 font-bold text-[15px] text-center">
+                Image
+              </th>
+              <th className="text-blue-800 font-bold text-[15px]">
+                Seller name
+              </th>
+              <th className="text-blue-800 font-bold text-[15px]">toy Name</th>
+              <th className="text-blue-800 font-bold text-[15px]">Quantity</th>
+              <th className="text-blue-800 font-bold text-[15px]">Price</th>
+              <th className="text-blue-800 font-bold text-[15px] text-center">
+                Ratings
+              </th>
+              <th className="text-centet text-blue-800 font-bold text-[15px] text-center">
+                Status
+              </th>
+              <th className="text-blue-800 font-bold text-[15px]"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {myToys.map((toy) => (
+              <MyToy key={toy._id} toy={toy} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

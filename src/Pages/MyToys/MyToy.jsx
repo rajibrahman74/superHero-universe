@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
-const Toys = ({ toy }) => {
+const MyToy = ({ toy }) => {
   const { _id, seller, price, name, quantity, picture } = toy;
-  // console.log(toy);
+  console.log(toy);
   return (
     <tr className="t mx-auto">
       <style
@@ -39,14 +39,29 @@ const Toys = ({ toy }) => {
         </div>
       </td>
       <th className="text-center">
-        <Link to={`/alltoys/${_id}`}>
-          <button className="border-0 py-2 opacity-75 text-white hover:bg-black px-4 bg-warning">
-            View Details
-          </button>
-        </Link>
+        <span className="flex justify-center items-center gap-5">
+          <Link to={`/alltoys/${_id}`}>
+            <span>
+              <img
+                className="h-10 w-10"
+                src="https://i.ibb.co/FJT6JSd/updater.png"
+                alt=""
+              />
+            </span>
+          </Link>
+          <Link to={`/alltoys/${_id}`}>
+            <span>
+              <img
+                className="h-10 w-10"
+                src="https://i.ibb.co/tYLWcK3/delete.png"
+                alt=""
+              />
+            </span>
+          </Link>
+        </span>
       </th>
     </tr>
   );
 };
 
-export default Toys;
+export default MyToy;
