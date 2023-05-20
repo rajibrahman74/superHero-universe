@@ -2,7 +2,7 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 
-const MyToy = ({ toy }) => {
+const MyToy = ({ toy, handleDelete }) => {
   const { _id, seller, price, name, quantity, picture } = toy;
   console.log(toy);
   return (
@@ -45,19 +45,17 @@ const MyToy = ({ toy }) => {
               <img
                 className="h-10 w-10"
                 src="https://i.ibb.co/FJT6JSd/updater.png"
-                alt=""
+                alt="Update Image"
               />
             </span>
           </Link>
-          <Link to={`/alltoys/${_id}`}>
-            <span>
+            <span className="cursor-pointer" onClick={() => handleDelete(_id)}>
               <img
                 className="h-10 w-10"
                 src="https://i.ibb.co/tYLWcK3/delete.png"
-                alt=""
+                alt="Delete image"
               />
             </span>
-          </Link>
         </span>
       </th>
     </tr>
