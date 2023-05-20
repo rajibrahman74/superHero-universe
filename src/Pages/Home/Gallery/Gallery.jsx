@@ -20,7 +20,7 @@ const Gallery = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 pt-24 pb-8">
       <div>
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-4 text-center pb-8">
+        <h2 className=" text-xl md:text-3xl font-extrabold text-gray-900 mb-4 text-center pb-8">
           Hero&apos;s <span className="text-blue-800 font-extrabold">Gallery</span>
         </h2>
         <div

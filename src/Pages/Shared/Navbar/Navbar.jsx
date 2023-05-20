@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 
 const Navbar = () => {
-  // const { user, logOut } = useContext(AuthContext);
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
 
@@ -72,7 +71,7 @@ const Navbar = () => {
               <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                  to="/"
+                  to="/mytoys"
                 >
                   My Toys
                 </NavLink>
@@ -82,9 +81,9 @@ const Navbar = () => {
               <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                  to="/"
+                  to="/addtoys"
                 >
-                  Add A Toy
+                  Add Toy
                 </NavLink>
               </li>
             )}
@@ -147,7 +146,7 @@ const Navbar = () => {
               <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                  to="/register"
+                  to="/mytoys"
                 >
                   My Toys
                 </NavLink>
@@ -157,9 +156,9 @@ const Navbar = () => {
               <li className="text-gray-900 font-medium">
                 <NavLink
                   activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                  to="/register"
+                  to="/addtoys"
                 >
-                  Add A Toy
+                  Add Toy
                 </NavLink>
               </li>
             )}

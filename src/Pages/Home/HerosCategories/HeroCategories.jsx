@@ -21,7 +21,7 @@ const HeroCategories = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-20">
-      <h2 className="text-center text-4xl font-bold pb-12">
+      <h2 className="text-center text-xl md:text-3xl font-bold pb-12">
         Shopping with{" "}
         <span className="text-blue-800 font-extrabold">Categories</span>
       </h2>

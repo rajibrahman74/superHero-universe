@@ -18,7 +18,7 @@ const ErrorPage = () => {
           </div>
           <a
             href="/"
-            className="btn border-0 bg-success text-white font-bold py-2 px-4  mt-8 animate-pulse"
+            className="btn border-0 bg-warning rounded-none text-white font-bold py-2 px-4  mt-8 animate-pulse"
           >
             Go back home
           </a>

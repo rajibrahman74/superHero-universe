@@ -88,7 +88,7 @@
 }
 @media (max-width: 767px) {
   .flex-container1 {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .flex-container1 .text {
     text-align: center;

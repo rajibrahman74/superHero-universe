@@ -8,6 +8,8 @@ import Register from "../Pages/SingUp/Register";
 import HeroDetails from "../Pages/Shared/HeroDetails/HeroDetails";
 import AllToys from "../Pages/AllToys/AllToys";
 import PrivateRouts from "./PrivateRouts";
+import AddToys from "../Pages/AddToys/AddToys";
+import MyToys from "../Pages/MyToys/MyToys";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,18 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/herotoys/${params.id}`),
       },
       {
+        path: "blog",
+        element: <Blog />,
+      },
+      {
+        path: "mytoys",
+        element: <MyToys />,
+      },
+      {
+        path: "addtoys",
+        element: <AddToys />,
+      },
+      {
         path: "alltoys",
         element: <AllToys />,
         loader: () => fetch("http://localhost:5000/herotoys"),
@@ -44,11 +58,6 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/herotoys/${params.id}`),
-      },
-
-      {
-        path: "blog",
-        element: <Blog />,
       },
       {
         path: "login",
