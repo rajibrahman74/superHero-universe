@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import useTitle from "../../../hooks/useTitle";
 
 const HeroDetails = () => {
+  useTitle("hero details")
   const heroToys = useLoaderData();
   const { picture, description, name, price, seller, seller_email, quantity } =
     heroToys;

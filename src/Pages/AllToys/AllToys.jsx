@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Toys from "./Toys";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const allToys = useLoaderData();
+  useTitle("All toys")
   const [limit, setLimit] = useState(20);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredToys, setFilteredToys] = useState([]);

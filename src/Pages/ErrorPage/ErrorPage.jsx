@@ -1,4 +1,7 @@
+import useTitle from "../../hooks/useTitle";
+
 const ErrorPage = () => {
+  useTitle("page not found")
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-600 text-white font-sans">
       <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-gradient-to-r from-yellow-300 via-yellow-400 to-red-500 bg-clip-text leading-none tracking-wide animate-pulse">

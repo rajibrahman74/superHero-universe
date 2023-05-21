@@ -46,7 +46,7 @@ const Toys = ({ toy }) => {
       <th className="text-center">
         {user ? (
           <Link to={`/alltoys/${_id}`}>
-            <button className="border-0 py-2 opacity-90 text-white hover:bg-black px-4 bg-warning">
+            <button className="border-0 py-2 text-white hover:bg-black px-4 bg-warning opacity-75">
               View Details
             </button>
           </Link>

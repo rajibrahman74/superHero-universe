@@ -3,9 +3,11 @@ import { updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
   const { createUser, googleSigIn } = useContext(AuthContext);
+  useTitle("Sign up")
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSingUp = (e) => {
