@@ -40,7 +40,7 @@ const MyToy = ({ toy, handleDelete }) => {
       </td>
       <th className="text-center">
         <span className="flex justify-center items-center gap-5">
-          <Link to={`/alltoys/${_id}`}>
+          <Link to={`/update/${_id}`}>
             <span>
               <img
                 className="h-10 w-10"
@@ -49,13 +49,13 @@ const MyToy = ({ toy, handleDelete }) => {
               />
             </span>
           </Link>
-            <span className="cursor-pointer" onClick={() => handleDelete(_id)}>
-              <img
-                className="h-10 w-10"
-                src="https://i.ibb.co/tYLWcK3/delete.png"
-                alt="Delete image"
-              />
-            </span>
+          <span className="cursor-pointer" onClick={() => handleDelete(_id)}>
+            <img
+              className="h-10 w-10"
+              src="https://i.ibb.co/tYLWcK3/delete.png"
+              alt="Delete image"
+            />
+          </span>
         </span>
       </th>
     </tr>
