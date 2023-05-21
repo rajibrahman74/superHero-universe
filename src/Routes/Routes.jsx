@@ -21,7 +21,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/herotoys"),
+        loader: () =>
+          fetch("https://super-hero-universe-server.vercel.app/herotoys"),
       },
       {
         path: "herocategories/:id",
@@ -31,7 +32,9 @@ const router = createBrowserRouter([
           </PrivateRouts>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/herotoys/${params.id}`),
+          fetch(
+            `https://super-hero-universe-server.vercel.app/herotoys/${params.id}`
+          ),
       },
       {
         path: "blog",
@@ -49,7 +52,9 @@ const router = createBrowserRouter([
         path: "update/:id",
         element: <UpdateToy />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/update/${params.id}`),
+          fetch(
+            `https://super-hero-universe-server.vercel.app/update/${params.id}`
+          ),
       },
       {
         path: "addtoys",
@@ -62,7 +67,8 @@ const router = createBrowserRouter([
       {
         path: "alltoys",
         element: <AllToys />,
-        loader: () => fetch("http://localhost:5000/herotoys"),
+        loader: () =>
+          fetch("https://super-hero-universe-server.vercel.app/herotoys"),
       },
       {
         path: "alltoys/:id",
@@ -72,7 +78,9 @@ const router = createBrowserRouter([
           </PrivateRouts>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/herotoys/${params.id}`),
+          fetch(
+            `https://super-hero-universe-server.vercel.app/herotoys/${params.id}`
+          ),
       },
       {
         path: "login",

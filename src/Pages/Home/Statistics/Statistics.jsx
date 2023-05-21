@@ -23,25 +23,25 @@ const Statistics = () => {
         </h2>
         <div className="flex flex-wrap -m-4 text-center">
           <div className="p-4 sm:w-1/4 w-1/2 border-2">
-            <h2 className="title-font font-bold sm:text-4xl text-3xl text-gray-900">
+            <h2 className="title-font font-semibold sm:text-4xl text-3xl text-gray-900">
               <CountUp key="users" end={12000000} {...countUpOptions} />
             </h2>
             <p className="leading-relaxed">Users</p>
           </div>
           <div className="p-4 sm:w-1/4 w-1/2 border-2">
-            <h2 className="title-font font-bold sm:text-4xl text-3xl text-gray-900">
+            <h2 className="title-font font-semibold sm:text-4xl text-3xl text-gray-900">
               <CountUp key="subscribes" end={90500} {...countUpOptions} />
             </h2>
             <p className="leading-relaxed">Subscribes</p>
           </div>
           <div className="p-4 sm:w-1/4 w-1/2 border-2">
-            <h2 className="title-font font-bold sm:text-4xl text-3xl text-gray-900">
+            <h2 className="title-font font-semibold sm:text-4xl text-3xl text-gray-900">
               <CountUp key="downloads" end={11000} {...countUpOptions} />
             </h2>
             <p className="leading-relaxed">Downloads</p>
           </div>
           <div className="p-4 sm:w-1/4 w-1/2 border-2">
-            <h2 className="title-font font-bold sm:text-4xl text-3xl text-gray-900">
+            <h2 className="title-font font-semibold sm:text-4xl text-3xl text-gray-900">
               <CountUp key="products" end={100000} {...countUpOptions} />
             </h2>
             <p className="leading-relaxed">Products</p>

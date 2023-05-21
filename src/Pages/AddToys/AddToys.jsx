@@ -28,7 +28,7 @@ const AddToys = () => {
       seller_email,
     };
 
-    fetch("http://localhost:5000/herotoys", {
+    fetch("https://super-hero-universe-server.vercel.app/herotoys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@ const AddToys = () => {
             timer: 3000,
           });
         }
-        form.reset()
+        form.reset();
       });
   };
   return (
