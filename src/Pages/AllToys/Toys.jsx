@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const Toys = ({ toy }) => {
+  const { user } = useContext(AuthContext);
+
   const { _id, seller, price, name, quantity, picture } = toy;
-  // console.log(toy);
+
   return (
     <tr className="t mx-auto">
       <style
@@ -39,11 +44,30 @@ const Toys = ({ toy }) => {
         </div>
       </td>
       <th className="text-center">
-        <Link to={`/alltoys/${_id}`}>
-          <button className="border-0 py-2 opacity-75 text-white hover:bg-black px-4 bg-warning">
-            View Details
-          </button>
-        </Link>
+        {user ? (
+          <Link to={`/alltoys/${_id}`}>
+            <button className="border-0 py-2 opacity-90 text-white hover:bg-black px-4 bg-warning">
+              View Details
+            </button>
+          </Link>
+        ) : (
+          <Link to={`/alltoys/${_id}`}>
+            <button
+              className="border-0 py-2 opacity-90 text-white hover:bg-black px-4 bg-warning"
+              onClick={() => {
+                Swal.fire({
+                  position: "top-start",
+                  icon: "error",
+                  title: "Please login first",
+                  showConfirmButton: false,
+                  timer: 3000,
+                });
+              }}
+            >
+              View Details
+            </button>
+          </Link>
+        )}
       </th>
     </tr>
   );

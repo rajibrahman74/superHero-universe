@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import clsx from "clsx";
+import { AuthContext } from "../../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const HeroCategories = () => {
+  const { user } = useContext(AuthContext);
   const toys = useLoaderData();
   const [activeCategory, setActiveCategory] = useState("");
   console.log(activeCategory);
@@ -85,11 +88,30 @@ const HeroCategories = () => {
                       })}
                     </div>
 
-                    <Link className="" to={`/herocategories/${toy._id}`}>
-                      <button className="rounded-none border-0 opacity-75 text-white bg-warning px-5 py-2.5 mt-4 hover:bg-black">
-                        View Details
-                      </button>
-                    </Link>
+                    {user ? (
+                      <Link className="" to={`/herocategories/${toy._id}`}>
+                        <button className="rounded-none border-0 opacity-75 text-white bg-warning px-5 py-2.5 mt-4 hover:bg-black">
+                          View Details
+                        </button>
+                      </Link>
+                    ) : (
+                      <Link className="" to={`/herocategories/${toy._id}`}>
+                        <button
+                          className="rounded-none border-0 opacity-75 text-white bg-warning px-5 py-2.5 mt-4 hover:bg-black"
+                          onClick={() => {
+                            Swal.fire({
+                              position: "top-start",
+                              icon: "error",
+                              title: "Please login first",
+                              showConfirmButton: false,
+                              timer: 3000,
+                            });
+                          }}
+                        >
+                          View Details
+                        </button>
+                      </Link>
+                    )}
                   </div>
                 ))}
             </div>
