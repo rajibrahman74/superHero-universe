@@ -1,6 +1,7 @@
 import Gallery from "../Gallery/Gallery";
 import Header from "../Header/Header";
 import HeroCategories from "../HerosCategories/HeroCategories";
+import SuperHeroStudio from "../SuperHeroStudio/SuperHeroStudio";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Header />
       <Gallery />
       <HeroCategories />
+      <SuperHeroStudio />
     </div>
   );
 };
