@@ -10,4 +10,4 @@
 ### Live link:
 
 ### Hosted on Firebase: [superHero-Universe-client](https://superhero-universe.web.app/)
-### Hosted on Vercel: [superHero-Universe-server](https://github.com/rajibrahman74/super-hero-universe-server)
+### Hosted on Vercel: [superHero-Universe-server](https://github.com/rajibrahman74/superHero-universe-server)
