@@ -19,8 +19,8 @@ The motivation behind this project was to create a robust and engaging web appli
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/rajibrahman74/awesome-chef-client.git`
-2. Navigate to the project directory: `cd awesome-chef-client`
+1. Clone the repository: `https://github.com/rajibrahman74/superHero-universe.git`
+2. Navigate to the project directory: `cd superHero-universe`
 3. Install the dependencies: `npm install`
 4. Configure Firebase Auth credentials: Add your Firebase configuration in the `.env` file.
 5. Configure MongoDB connection: Update the MongoDB connection string in the server configuration files.
